@@ -162,6 +162,8 @@ resource "aws_rds_cluster" "this" {
       replication_source_identifier,
       # See docs here https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_global_cluster#new-global-cluster-from-existing-db-cluster
       global_cluster_identifier,
+      # As we have automatic minor version upgrades enabled we need to ignore version changes
+      engine_version,
     ]
   }
 }
